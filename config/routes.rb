@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/about' => 'static_pages#about'
+  resources :students, only: [:index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

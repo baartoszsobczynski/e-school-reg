@@ -14,4 +14,16 @@ RSpec.describe Student, type: :model do
     student = FactoryGirl.build(:student, last_name: nil)
     expect(student).not_to be_valid
   end
+
+  it "is invalid when first name longer than 50" do
+    f_name = "a" * 51
+    student = FactoryGirl.build(:student, first_name: f_name)
+    expect(student).not_to be_valid
+  end
+
+  it "is invalid when last name longer than 50" do
+    l_name = "a" * 51
+    student = FactoryGirl.build(:student, last_name: l_name)
+    expect(student).not_to be_valid
+  end
 end
