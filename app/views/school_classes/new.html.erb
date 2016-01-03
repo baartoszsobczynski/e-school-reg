@@ -1,11 +1,16 @@
 <div class="container">
   <h1>Add class</h1>
-  <%= form_for @school_class do |f| %>
-      <%= f.label :level %>
-      <%= f.text_field :level %><br>
-      <%= f.label :indication %>
-      <%= f.text_field :indication %><br>
-      <%= f.submit "Create" %>
+  <% if @school_class.errors.any? %>
+      <% @school_class.errors.full_messages.each do |msg| %>
+      <%= msg %>
+      <% end %>
   <% end %>
+  <div class="input-group">
+    <%= form_for @school_class do |f| %>
+        <%= f.text_field :level, placeholder: 'Level' %><br>
+        <%= f.text_field :indication, placeholder: 'Indication' %><br>
+        <%= f.submit "Create" %>
+    <% end %>
+  </div>
   <%= link_to "Back to class list", school_classes_path %>
 </div>

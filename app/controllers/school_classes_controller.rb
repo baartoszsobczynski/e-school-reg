@@ -25,7 +25,7 @@ class SchoolClassesController < ApplicationController
     @school_class = SchoolClass.find(params[:id])
     @school_class.destroy
 
-    flash.notice="School Class '#{@school_class.level}#{@school_class.indication}' was deleted"
+    flash[:success] ="School Class '#{@school_class.level}#{@school_class.indication}' was deleted"
 
     redirect_to school_classes_path
   end
