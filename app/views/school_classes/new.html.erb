@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Add class</h1>
+  <%= form_for @school_class do |f| %>
+      <%= f.label :level %>
+      <%= f.text_field :level %><br>
+      <%= f.label :indication %>
+      <%= f.text_field :indication %><br>
+      <%= f.submit "Create" %>
+  <% end %>
+  <%= link_to "Back to class list", school_classes_path %>
+</div>

@@ -1,5 +1,16 @@
 <% provide(:title, "Students list") %>
-<h1>Students list</h1>
-<% @students.each do |student| %>
-    <p><%= "Imię: #{student.first_name} Nazwisko: #{student.last_name}" %></p>
-<% end %>
+<div class="container">
+  <h1>Students list</h1>
+  <table class="table">
+    <tr>
+      <th>Student</th>
+    </tr>
+    <% @students.each do |student| %>
+        <tr>
+          <td><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+
+
