@@ -9,8 +9,4 @@ RSpec.feature "SchoolClasses", type: :feature do
     click_button "Create"
     expect(page).to have_text("You have successfully added a new class.")
   end
-
-  scenario "delete a school class" do
-    visit 'school_classes/'
-  end
 end
