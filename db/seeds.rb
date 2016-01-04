@@ -27,5 +27,6 @@ end
 60.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  Student.create(first_name: first_name, last_name: last_name)
+  class_id = SchoolClass.all.sample.id
+  Student.create(first_name: first_name, last_name: last_name, school_class_id: class_id)
 end

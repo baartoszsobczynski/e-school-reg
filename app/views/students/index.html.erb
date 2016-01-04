@@ -1,13 +1,15 @@
 <% provide(:title, "Students list") %>
 <div class="container">
-  <h1>Students list</h1>
+  <h1><%= "Students list (#{@students.count})" %></h1>
   <table class="table">
     <tr>
       <th>Student</th>
+      <th>Class</th>
     </tr>
     <% @students.each do |student| %>
         <tr>
           <td><%= link_to "#{student.first_name} #{student.last_name}", student_path(student.id) %></td>
+          <td><%= link_to "#{student.school_class.level}#{student.school_class.indication}", school_class_path(student.school_class.id) %></td>
         </tr>
     <% end %>
   </table>

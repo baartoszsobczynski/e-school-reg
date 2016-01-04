@@ -1,5 +1,5 @@
 class SchoolClass < ActiveRecord::Base
-
+  has_many :students
   validates :level,
             presence: true,
             length: { maximum: 1 },
