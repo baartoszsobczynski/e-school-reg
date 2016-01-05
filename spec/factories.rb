@@ -1,4 +1,12 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :mark do
+    grade ""
+comment "MyString"
+subject_id 1
+student_id 1
+  end
+  factory :subject do
+    name "MyString"
+  end
 
   factory :student do
     first_name { Faker::Name.first_name }

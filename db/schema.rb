@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160104215627) do
+ActiveRecord::Schema.define(version: 20160105161733) do
+
+  create_table "marks", force: :cascade do |t|
+    t.integer  "grade"
+    t.string   "comment"
+    t.integer  "subject_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "marks", ["student_id"], name: "index_marks_on_student_id"
 
   create_table "school_classes", force: :cascade do |t|
     t.integer  "level"
@@ -29,5 +40,11 @@ ActiveRecord::Schema.define(version: 20160104215627) do
   end
 
   add_index "students", ["school_class_id"], name: "index_students_on_school_class_id"
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

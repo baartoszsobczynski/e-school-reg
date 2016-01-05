@@ -2,4 +2,18 @@
   <h1><%= @student.first_name %></h1>
   <p>This is student page.</p>
 
+  <h1>Marks</h1>
+  <table class="table">
+    <tr>
+      <th colspan="2">Subject</th>
+    </tr>
+    <% Subject.all.each do |subject| %>
+        <% grades = [] %>
+        <% subject.marks.select{ |m| m.student_id.eql?(@student.id) }.each { |m| grades << m.grade  }  %>
+        <tr>
+          <td><%= subject.name %></td>
+          <td><%= grades.empty? ? "No grades" : grades.join(", ") %></td>
+        </tr>
+    <% end %>
+  </table>
 </div>
