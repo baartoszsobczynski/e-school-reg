@@ -1,11 +1,12 @@
-FactoryGirl.define do  factory :mark do
-    grade ""
-comment "MyString"
-subject_id 1
-student_id 1
+FactoryGirl.define do
+
+  factory :mark do
+    grade (1..6).to_a.sample
+    comment "Sample Comment"
   end
+
   factory :subject do
-    name "MyString"
+    name "ExampleName"
   end
 
   factory :student do

@@ -3,14 +3,14 @@ class SchoolClass < ActiveRecord::Base
   validates :level,
             presence: true,
             length: { maximum: 1 },
-            format: { with: /[1-3]/ },
-            uniqueness: true
+            format: { with: /[1-3]/ }
 
 
   validates :indication,
             presence: true,
             length: { maximum: 2 },
-            format: { with: /[A-Z]/ },
-            uniqueness: true
+            format: { with: /[A-Z]/ }
+
+  validates_uniqueness_of :level, :scope => :indication
 
 end
