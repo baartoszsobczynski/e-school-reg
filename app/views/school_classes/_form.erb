@@ -1,0 +1,14 @@
+<div class="input-group">
+  <%= form_for @school_class do |f| %>
+      <div class="form-group">
+        <%= f.label :level %>
+        <%= f.text_field :level, placeholder: 'Level', class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.label :indication %>
+        <%= f.text_field :indication, placeholder: 'Indication', class: "form-control" %><br>
+      </div>
+
+      <%= f.submit "Create", class: "btn btn-success" %>
+  <% end %>
+</div>

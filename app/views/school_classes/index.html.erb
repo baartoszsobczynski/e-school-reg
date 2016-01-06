@@ -1,15 +1,16 @@
 <% provide(:title, "School classes") %>
 <div class="container">
   <h1>School classes</h1>
-  <%= link_to "Add new class", new_school_class_path %>
+  <%= link_to "Add new class", new_school_class_path, class: "btn btn-success" %>
   <table class="table">
     <tr>
-      <th colspan="2">Class</th>
+      <th colspan="3">Class</th>
     </tr>
     <% @school_classes.each do |sc| %>
         <tr>
           <td><%= link_to "#{sc.level} #{sc.indication}", school_class_path(sc.id) %><%= " (#{sc.students.count} students)" %></td>
-          <td><%= link_to "Delete", school_class_path(sc), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></td>
+          <td><%= link_to "Edit", edit_school_class_path(sc), class: "btn btn-primary" %></td>
+          <td><%= link_to "Delete", school_class_path(sc), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></td>
         </tr>
     <% end %>
   </table>
