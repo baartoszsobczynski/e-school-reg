@@ -34,6 +34,16 @@ class SchoolClassesController < ApplicationController
     @school_class = SchoolClass.find(params[:id])
   end
 
+  def update
+    @school_class = SchoolClass.find(params[:id])
+    if @school_class.update_attributes(school_class_params)
+      flash[:success] = "School class updated"
+      redirect_to @school_class
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def school_class_params

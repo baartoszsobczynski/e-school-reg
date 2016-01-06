@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= "#{@student.first_name} #{@student.last_name} (Class: #{SchoolClass.find(@student.school_class_id).level}#{SchoolClass.find(@student.school_class_id).indication})" %></h1>
+  <h1><%= "#{@student.first_name} #{@student.last_name} #{link_to_school_class_if_available(@student.id)}".html_safe %></h1>
   <p>This is student page.</p>
 
   <h1>Marks</h1>

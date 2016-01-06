@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/about' => 'static_pages#about'
-  resources :students, only: [:index, :show]
+  resources :students
   resources :school_classes
 
   # Example of regular route:

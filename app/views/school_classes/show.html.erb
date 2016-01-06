@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= "Class #{@school_class.level}#{@school_class.indication}" %></h1>
-  <%= link_to "Back to classes list", school_classes_path %>
+  <%= link_to "Back to classes list", school_classes_path, class: "btn btn-default" %>
   <h1>Students in class</h1>
   <table class="table">
     <tr>
